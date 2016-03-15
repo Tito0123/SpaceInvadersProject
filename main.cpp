@@ -520,7 +520,9 @@ int main() {
         blk_x = player.player_blk_x+(player.player_width/2);
         blk_y = player.player_blk_y;
         missile_init(&missile, blk_x, blk_y, WHITE);
-        enemy_missile_init(&enemy_missile, blk_x, blk_y, WHITE);
+        int e_blk_x = 0;
+        int e_blk_y = 2;
+        enemy_missile_init(&enemy_missile, e_blk_x, e_blk_y, WHITE);
         
         // prints lives
         uLCD.locate(0,0);

@@ -48,6 +48,7 @@ void update_enemy_missile_pos(missile_t *g)
     {
         missile_erase(g);
         g->status = ENEMY_MISSILE_INACTIVE;
+        g->missile_blk_y = 2;
     }
 }
 
