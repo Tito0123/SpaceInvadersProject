@@ -62,7 +62,7 @@ This project is a version of the Nokia space invaders with the following feature
 # Setup
 ![image of space invaders setup](https://github.com/Tito0123/Space_invadersbyTitoandBrice/blob/master/IMG_5252.jpg?raw=true 'setup')
 # Demo Video 
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/YUjkHr5F6Njw /0.jpg)](http://www.youtube.com/watch?v=UjkHr5F6Njw  "Video Title"
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/YUjkHr5F6Njw /0.jpg)](http://www.youtube.com/watch?v=UjkHr5F6Njw  "Video Title")
 
 
 
