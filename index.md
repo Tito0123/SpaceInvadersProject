@@ -7,6 +7,7 @@
 
 
 ### Welcome to the SpaceInvaders wiki!
+
     Team Members: Brice Minix; Tito Oyewole
     
 # Overview
@@ -69,9 +70,6 @@ This project is a version of the Nokia space invaders with the following feature
 # Demo Video 
 
 
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/Tito0123/Space_invadersbyTitoandBrice/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
@@ -94,7 +92,7 @@ Syntax highlighted code block
 
 **Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
+[https://www.youtube.com/watch?v=UjkHr5F6Njw](url) and ![Image](src)
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
