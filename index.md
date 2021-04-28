@@ -60,9 +60,9 @@ This project is a version of the Nokia space invaders with the following feature
 |            |        |  Volume (Bottom) |            |           |       |    |         |      | Bottom      |
 
 # Setup
-![image of space invaders setup](https://github.com/Tito0123/Space_invadersbyTitoandBrice/blob/master/IMG_5252.jpg?raw=true 'setup')
+![image of space invaders setup](https://github.com/Tito0123/Space_invadersbyTitoandBrice/blob/master/IMG_5252.jpg?raw=true "setup")
 # Demo Video 
-[![Alternate Text]({https://github.com/Tito0123/Space_invadersbyTitoandBrice/blob/master/Screen%20Shot%202021-04-28%20at%204.27.09%20PM.png?raw=true](https://www.youtube.com/watch?v=GOonE07fTdg} "Link Title")
+[![Alternate Text](https://github.com/Tito0123/Space_invadersbyTitoandBrice/blob/master/Screen%20Shot%202021-04-28%20at%204.27.09%20PM.png?raw=true)](https://www.youtube.com/watch?v=GOonE07fTdg "Place holder")
 
 
  
