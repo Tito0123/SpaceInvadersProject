@@ -1,5 +1,14 @@
+
+
+
+
+
+
+
+
 ### Welcome to the SpaceInvaders wiki!
     Team Members: Brice Minix; Tito Oyewole
+    
 # Overview
 
 This project is a version of the Nokia space invaders with the following features:
