@@ -10,7 +10,7 @@
 #include "SparkfunAnalogJoystick.h"
 #include "LSM9DS1.h"
 #include <string>
-
+ 
 // Navigation Switch replaced with Analog Joystick and IMU
 /* ==== Navigation Switch ===== */
 /*
@@ -70,7 +70,7 @@ inline Nav_Switch::operator int ()
     return _pins.read();
 }
 */
-
+ 
 // Platform initialization
 uLCD_4DGL uLCD(p28,p27,p29);  // LCD (serial tx, serial rx, reset pin;)
 AnalogOut DACout(p18);      // speaker
@@ -101,13 +101,13 @@ enemy_t enemy_12;
 enemy_t enemy_13;
 enemy_t enemy_14;
 enemy_t enemy_15;
-
+ 
 // initialize all global barrier objects.
 barrier_t barrier_1;
 barrier_t barrier_2;
 barrier_t barrier_3;
 barrier_t barrier_4;
-
+ 
 // Initialize variables
 // Brice added "volatile" here to protect global variables.
 volatile int numOfEnemies = 0; // number of enemies
@@ -135,22 +135,22 @@ volatile bool win = false; // add win to global variables so that we can have LE
 Timer bestTimer; // Timer started when the game begins and stopped when the game ends. Used to determine if there's a new best time.
 Mutex SDLock; // Used to put a mutex lock on the SD card for audio or for reading/writing the best time to the SD card.
 //Mutex mbedLock; // MIGHT BE NEEDED FOR 2 PLAYER
-
+ 
 // Initialize global player object
 player_t player;
-
+ 
 // Intialize global player and enemy missile
 missile_t missile; // player missile
 missile_t enemy_missile; // enemy missile
 //missile_t enemy_missile2; // first extra enemy missile for level 2 (medium difficulty)
-
+ 
 // Array of enemy objects
 enemy_t * enemyArray[15];
-
+ 
 // Function Prototypes
 void move_enemy_down();
 void playstart(void const *args); // PUT BACK IN
-
+ 
 // Draws the enemies at the initial starting location    
 void draw_enemies_level()
 {
@@ -160,51 +160,54 @@ void draw_enemies_level()
     numOfEnemies = 15;
     
     // First Row of Enemies
-    enemy_init(&enemy_1,start_x_pos,start_enemy_y_pos,WHITE); // initialize x-pos and y-pos and color of enemy
+      // First Row of Enemies
+    enemy_init(&enemy_1,start_x_pos,start_enemy_y_pos,RED); // initialize x-pos and y-pos and color of 
     enemy_show(&enemy_1); // displays the enemy on uLCD
     
-    enemy_init(&enemy_2,start_x_pos+15,start_enemy_y_pos,WHITE);
+    enemy_init(&enemy_2,start_x_pos+15,start_enemy_y_pos,RED);
     enemy_show(&enemy_2);
     
-    enemy_init(&enemy_3,start_x_pos+30,start_enemy_y_pos,WHITE);
+    enemy_init(&enemy_3,start_x_pos+30,start_enemy_y_pos,RED);
     enemy_show(&enemy_3);
     
-    enemy_init(&enemy_4,start_x_pos+45,start_enemy_y_pos,WHITE);
+    enemy_init(&enemy_4,start_x_pos+45,start_enemy_y_pos,RED);
     enemy_show(&enemy_4);
     
-    enemy_init(&enemy_5,start_x_pos+60,start_enemy_y_pos,WHITE);
+    enemy_init(&enemy_5,start_x_pos+60,start_enemy_y_pos,RED);
     enemy_show(&enemy_5);
     
     // Second Row of Enemies
-    enemy_init(&enemy_6,start_x_pos,start_enemy_y_pos+12,WHITE);
+    enemy_init(&enemy_6,start_x_pos,start_enemy_y_pos+12,RED);
     enemy_show(&enemy_6);
     
-    enemy_init(&enemy_7,start_x_pos+15,start_enemy_y_pos+12,WHITE);
+    enemy_init(&enemy_7,start_x_pos+15,start_enemy_y_pos+12,RED);
     enemy_show(&enemy_7);
     
-    enemy_init(&enemy_8,start_x_pos+30,start_enemy_y_pos+12,WHITE);
+    enemy_init(&enemy_8,start_x_pos+30,start_enemy_y_pos+12,RED);
     enemy_show(&enemy_8);
     
-    enemy_init(&enemy_9,start_x_pos+45,start_enemy_y_pos+12,WHITE);
+    enemy_init(&enemy_9,start_x_pos+45,start_enemy_y_pos+12,RED);
     enemy_show(&enemy_9);
     
-    enemy_init(&enemy_10,start_x_pos+60,start_enemy_y_pos+12,WHITE);
+    enemy_init(&enemy_10,start_x_pos+60,start_enemy_y_pos+12,RED);
     enemy_show(&enemy_10);
     
     // Third Row of Enemies
-    enemy_init(&enemy_11,start_x_pos,start_enemy_y_pos+24,WHITE);
+    enemy_init(&enemy_11,start_x_pos,start_enemy_y_pos+24,RED);
     enemy_show(&enemy_11);
     
-    enemy_init(&enemy_12,start_x_pos+15,start_enemy_y_pos+24,WHITE);
+    enemy_init(&enemy_12,start_x_pos+15,start_enemy_y_pos+24,RED);
     enemy_show(&enemy_12);
     
-    enemy_init(&enemy_13,start_x_pos+30,start_enemy_y_pos+24,WHITE);
+    enemy_init(&enemy_13,start_x_pos+30,start_enemy_y_pos+24,RED);
     enemy_show(&enemy_13);
     
-    enemy_init(&enemy_14,start_x_pos+45,start_enemy_y_pos+24,WHITE);
+    enemy_init(&enemy_14,start_x_pos+45,start_enemy_y_pos+24,RED);
     enemy_show(&enemy_14);
     
-    enemy_init(&enemy_15,start_x_pos+60,start_enemy_y_pos+24,WHITE);
+    enemy_init(&enemy_15,start_x_pos+60,start_enemy_y_pos+24,RED);
+    enemy_show(&enemy_15);
+    enemy_init(&enemy_15,start_x_pos+60,start_enemy_y_pos+24,RED);
     enemy_show(&enemy_15);
     
     // Put enemy objects into array
@@ -224,7 +227,7 @@ void draw_enemies_level()
     enemyArray[13] = &enemy_14;
     enemyArray[14] = &enemy_15;
 }
-
+ 
 // Draw and initialize the 4 barriers that the player can hide behind.
 void draw_barriers_level() {
         // Initialize local variables
@@ -240,7 +243,7 @@ void draw_barriers_level() {
     barrier_init(&barrier_4,start_x_pos+96,start_barrier_y_pos,GREEN);
     barrier_show(&barrier_4);
 }
-
+ 
 // Draws the player at the initial starting location
 void draw_initial_player()
 {
@@ -250,7 +253,7 @@ void draw_initial_player()
     player_init(&player,start_x_pos,start_y_pos,WHITE); // intialize x-pos and y-pos and color of player
     player_show(&player); // display player on uLCD
 }
-
+ 
 // Checks all enemies in row 1
 void check_hit_enemy_row1()
 {
@@ -268,7 +271,7 @@ void check_hit_enemy_row1()
     hit_enemy = check_enemy(&enemy_5, &missile);
     numOfEnemies = numOfEnemies - hit_enemy;
 }
-
+ 
 // Same as check_hit_enemy_row1, but checks enemies at row 2
 void check_hit_enemy_row2()
 {
@@ -286,12 +289,12 @@ void check_hit_enemy_row2()
     hit_enemy = check_enemy(&enemy_10, &missile);
     numOfEnemies = numOfEnemies - hit_enemy;
 }
-
+ 
 // Same as check_hit_enemy_row1, but checks enemies at row 3
 void check_hit_enemy_row3()
 {
     int hit_enemy;
-
+ 
     // Third Row of Enemies
     hit_enemy = check_enemy(&enemy_11, &missile);
     numOfEnemies = numOfEnemies - hit_enemy;
@@ -304,13 +307,13 @@ void check_hit_enemy_row3()
     hit_enemy = check_enemy(&enemy_15, &missile);
     numOfEnemies = numOfEnemies - hit_enemy;
 }
-
+ 
 // Checks if player is hit
 void check_player_hit()
 {    
     hit_player = check_player(&player, &enemy_missile); // checks if the missile hits the player and returns 1 if hit, 0 if not hit
 }
-
+ 
 // Randomly selects an enemy to fire and updates the position of where the missile will fire from
 void random_attack_gen()
 {
@@ -341,7 +344,7 @@ void random_attack_gen()
         enemy_missile.status = ENEMY_MISSILE_ACTIVE;
     }
 }
-
+ 
 // moves the enemy
 void enemy_motion()
 {
@@ -398,7 +401,7 @@ void enemy_motion()
         ENEMY_MOVE += 1;
     }
 }
-
+ 
 // moves all the enemies down in the y-direction
 void move_enemy_down()
 {
@@ -441,7 +444,7 @@ void move_enemy_down()
     enemy_14.enemy_blk_y += enemy_14.enemy_height+4;
     enemy_15.enemy_blk_y += enemy_15.enemy_height+4;
 }
-
+ 
 // thread that plays sounds during game
 void playstart(void const *args)//Th
 {   //Depending on the state of the game,
@@ -509,8 +512,8 @@ void playstart(void const *args)//Th
         }
     }
 }
-
-
+ 
+ 
 // thread that adds RGB LED Lighting Effects that coincide with the game -- Brice
 void ledEffects(void const *args)//Th
 {   //Depending on the state of the game,
@@ -628,10 +631,10 @@ void ledEffects(void const *args)//Th
         }
     }
 }
-
+ 
 // SLAVE AND MASTER THREADS BELOW ARE USED ONLY WITH 2 PLAYER (STILL BUGGY AND REQUIRES EXTRA HARDWARE)
 // UNCOMMENT THIS THREAD IF SECOND PLAYER AND COMMENT MASTER THREAD
-
+ 
 // The slave mbed device (second player) should uncomment this thread -- Brice
 /*
 void mbedSlave(void const *args) {
@@ -651,7 +654,7 @@ void mbedSlave(void const *args) {
     }
 }
 */
-
+ 
                 //first_player_ready = true;
                 //second_player_ready = true;
             //    begin_game2 = true;
@@ -680,9 +683,9 @@ void mbedSlave(void const *args) {
 //        Thread::wait(1000);
 //    }
 //}
-
-
-
+ 
+ 
+ 
 // UNCOMMENT THIS THREAD IF FIRST PLAYER AND COMMENT SLAVE THREAD
 // The master mbed device (second player) should uncomment this thread -- Brice
 /*
@@ -735,7 +738,7 @@ void mbedMaster(void const *args) {
     }
 }
 */
-
+ 
 int main() {
      IMU.begin(); // start the IMU
      if (!IMU.begin()) { // print error message if error with IMU
@@ -900,10 +903,10 @@ int main() {
         //}
         // clear the screen to start drawing the level
         uLCD.cls();
-
+ 
         // Draw the enemies
         draw_enemies_level();
-
+ 
         // Draw the player
         draw_initial_player();
         
@@ -939,7 +942,7 @@ int main() {
         }
         //uLCD.locate(0,0);
         //uLCD.printf("Lives:%i", lives); // original, basic lives
-
+ 
         // prints score (no competition possible since the score always ends as the same)
         uLCD.locate(9,0);
         uLCD.printf("Score:%i", score);
@@ -984,14 +987,14 @@ int main() {
             {
                 check_hit_enemy_row1();
             }
-
+ 
             // checks if player missile passes y-pos of row2
             if (missile.missile_blk_y+1-missile.missile_height <= enemy_6.enemy_blk_y
                     && missile.missile_blk_y+1-missile.missile_height >= enemy_6.enemy_blk_y-enemy_6.enemy_height) 
             {
                 check_hit_enemy_row2();
             }
-
+ 
             // checks if player missile passes y-pos of row3
             if (missile.missile_blk_y+1-missile.missile_height <= enemy_11.enemy_blk_y
                     && missile.missile_blk_y+1-missile.missile_height >= enemy_11.enemy_blk_y-enemy_11.enemy_height) 
@@ -1035,10 +1038,10 @@ int main() {
                 check_player_hit();
             }
             
-
+ 
             update_missile_pos(&missile); // updates player missile position
             update_enemy_missile_pos(&enemy_missile, level); // updates enemy missile position
-
+ 
             // Player Movement checked with navigation switch
             //if (myNav.left() && ((player.player_blk_x-3) > 0))
             
@@ -1272,7 +1275,7 @@ int main() {
                     }
                 }
             }
-
+ 
         }
                 // game play loop
     /* TWO-PLAYER MODE: BUGGY, BUT THE PRIMITIVES ARE IN PLACE.
@@ -1311,14 +1314,14 @@ int main() {
             {
                 check_hit_enemy_row1();
             }
-
+ 
             // checks if player missile passes y-pos of row2
             if (missile.missile_blk_y+1-missile.missile_height <= enemy_6.enemy_blk_y
                     && missile.missile_blk_y+1-missile.missile_height >= enemy_6.enemy_blk_y-enemy_6.enemy_height) 
             {
                 check_hit_enemy_row2();
             }
-
+ 
             // checks if player missile passes y-pos of row3
             if (missile.missile_blk_y+1-missile.missile_height <= enemy_11.enemy_blk_y
                     && missile.missile_blk_y+1-missile.missile_height >= enemy_11.enemy_blk_y-enemy_11.enemy_height) 
@@ -1349,10 +1352,10 @@ int main() {
                 check_player_hit();
             }
             
-
+ 
             update_missile_pos(&missile); // updates player missile position
             update_enemy_missile_pos(&enemy_missile, level); // updates enemy missile position
-
+ 
             // Player Movement checked with navigation switch
             //if (myNav.left() && ((player.player_blk_x-3) > 0))
             // With joystick click, change color of player from GREEN -> BLUE -> PINK -> PURPLE -> YELLOW (and loop).
