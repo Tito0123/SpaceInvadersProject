@@ -66,7 +66,7 @@ This project is a version of the Nokia space invaders with the following feature
 |            |        |  Volume (Bottom) |            |           |       |    |         |      | Bottom      |
 
 # Demo Program
-![image of space invaders setup](C175CFED-364A-4414-A65B-7ECA685ECD72.jpeg)
+![image of space invaders setup](https://github.com/Tito0123/Space_invadersbyTitoandBrice/blob/master/C175CFED-364A-4414-A65B-7ECA685ECD72.jpeg?raw=true)
 # Demo Video 
 
 
