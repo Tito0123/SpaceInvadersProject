@@ -62,8 +62,7 @@ This project is a version of the Nokia space invaders with the following feature
 # Setup
 ![image of space invaders setup](https://github.com/Tito0123/Space_invadersbyTitoandBrice/blob/master/IMG_5252.jpg?raw=true 'setup')
 # Demo Video 
-[Everything Is AWESOME](//img.youtube.com/vi/UjkHr5F6Njw/0.jpg)](//www.youtube.com/watch?v==UjkHr5F6Njw "Everything Is AWESOME")frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> "Video Title")
-
+[![Alternate Text]({https://github.com/Tito0123/Space_invadersbyTitoandBrice/blob/master/Screen%20Shot%202021-04-28%20at%204.27.09%20PM.png?raw=true](https://www.youtube.com/watch?v=GOonE07fTdg} "Link Title")
 
 
  
