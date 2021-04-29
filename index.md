@@ -68,7 +68,7 @@ Michael Son's Mbed Space Invaders inspired our version of the game. The link to 
 # Demo Video 
 [![Alternate Text](https://github.com/Tito0123/Space_invadersbyTitoandBrice/blob/master/Screen%20Shot%202021-04-28%20at%204.27.09%20PM.png?raw=true)](https://www.youtube.com/watch?v=GOonE07fTdg "Place holder")
 
-#Future Improvements
+# Future Improvements
 1. When we set out to recreate this game, we wanted to implement a two-player Space Invaders game using two mbeds, two screens, e.t.c. However, we quickly ran into some technical difficulties while attempting to form a means of communication between the two mbeds. We eventually figured it out, but time would not allow us to proceed on this path. Currently, the two mbeds can communicate with each other, and we have the primitives for this setup commented out in our code. In the future, we will move forward with our idea of two players competing to get the highest scores.
 2. More work needs to be done to make both versions of the game less buggy.
 3. We can further improve the animations of the game and the sound quality.
