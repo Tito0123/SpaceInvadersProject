@@ -65,8 +65,13 @@ Michael Son's Mbed Space Invaders inspired our version of the game. The link to 
 
 # Schematic
 ![image Schematic](https://github.com/Tito0123/SpaceInvadersProject/blob/master/schematics.png?raw=true)
+
+
 # Setup
-![image of space invaders setup](https://github.com/Tito0123/SpaceInvadersProject/blob/master/IMG_5268.jpg?raw=true)
+
+![image of space invaders Game Menu](https://github.com/Tito0123/SpaceInvadersProject/blob/master/IMG_5261.jpg?raw=true, "Game Menu")
+
+![image of space invaders Game Screen](https://github.com/Tito0123/SpaceInvadersProject/blob/master/IMG_5268.jpg?raw=true,"Game Screen")
 
 # Demo Video 
 [![Alternate Text](https://github.com/Tito0123/Space_invadersbyTitoandBrice/blob/master/Screen%20Shot%202021-04-28%20at%204.27.09%20PM.png?raw=true)](https://www.youtube.com/watch?v=GOonE07fTdg "Place holder")
