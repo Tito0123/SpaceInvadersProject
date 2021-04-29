@@ -1257,6 +1257,8 @@ int main() {
             // if player loses all lives or enemy reaches the player
             if (lose || lives1 == 0 || lives2 == 0 || lives3 == 0)
             {    
+                bestTimer.stop();
+                bestTimer.reset();
                 begin_game = false; // set to false to end game
                 uLCD.cls(); // clear the game screen
                 
