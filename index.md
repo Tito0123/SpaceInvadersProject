@@ -11,7 +11,7 @@ This project is a version of the space invaders created by Tomohiro Nishikado fo
 
 1. Joystick/IMU: Micheal Son's game makes use of a navigation switch to browse through the game menu and control the ship. Our version of the game uses both a joystic and an IMU for smoother movement and a more comfortable feel. Clicking the joystick also changes the color of the player.
 2. Pushbutton: In both version of the game, a pushbutton is used to select an option on the menu screen and shoot missles at the rows of enemies.
-3. Speakers: Our version of the game utilizes a speaker and a class D amplifier to play sounds that are in sync with the game (some examples include: victory/losing sound, game menu sound, sprite fired sound e.t.c). This feature is not present in Micheal Son's game.
+3. Speakers: Our version of the game utilizes a speaker and a class D amplifier to play sounds that are in sync with the game (some examples include: victory/losing sound, game menu sound, missle fired sound e.t.c). This feature is not present in Micheal Son's game.
 4. Levels: In the first level, the player has three lives; in the second level, the player has two lives, and in the third level, the player   has one life.
 5. LED lighting effect: These effects are triggered once the game starts (i.e., at the game menu screen), when the player fires a shot, during a victory e.t.c  
 6. Barriers: four barriers shields the player from the enemy missiles. These barriers break down once they have been hit by a missile or by the player.
