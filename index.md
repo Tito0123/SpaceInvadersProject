@@ -74,10 +74,14 @@ Michael Son's Mbed Space Invaders inspired our version of the game. The link to 
 3. We can further improve the animations of the game and the sound quality.
 
 # References/Citation
-[comicalgameoverEdit (gameover)](https://freesound.org/people/themusicalnomad/sounds/253886/)  
-[bigExplosionEdit2 (death)](https://freesound.org/people/tcpp/sounds/77339/)  
-[futureEdit2 (intro)](https://freesound.org/people/VABsounds/sounds/443865/)  
-[laserEdit (missile)](https://freesound.org/people/nsstudios/sounds/321102/)  
+[comicalgameoverEdit (gameover)](https://freesound.org/people/themusicalnomad/sounds/253886/) 
+
+[bigExplosionEdit2 (death)](https://freesound.org/people/tcpp/sounds/77339/) 
+
+[futureEdit2 (intro)](https://freesound.org/people/VABsounds/sounds/443865/) 
+
+[laserEdit (missile)](https://freesound.org/people/nsstudios/sounds/321102/) 
+
 [victoryEdit2 (win)](https://freesound.org/people/honeybone82/sounds/513253/)  
 
 [Starter Code: Michael Son’s Mbed Space Invaders](https://os.mbed.com/users/michaeljson/notebook/mbed-space-invaders/) 
