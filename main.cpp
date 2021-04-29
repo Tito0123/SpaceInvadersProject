@@ -39,7 +39,7 @@ Nav_Switch::Nav_Switch (PinName up,PinName down,PinName left,PinName right,PinNa
     _pins(up, down, left, right, fire)
 {
     _pins.mode(PullUp); //needed if pullups not on board or a bare nav switch is used - delete otherwise
-    wait(0.001); //delays just a bit for pullups to pull inputs high
+    wait(0.001); //delays just a bit for pullups to pull inputs 
 }
 inline bool Nav_Switch::up()
 {
@@ -79,7 +79,7 @@ SDFileSystem sd(p5, p6, p7, p8, "sd"); // SD card and filesystem (mosi, miso, sc
 //Nav_Switch myNav(p16, p10, p11, p9, p12); //pin order on Sparkfun breakout. move U from p13 to p16 so we can use another Serial to communicate with mbed
 DigitalIn pb(p20); // push button for player misisle fire
 Serial pc(USBTX, USBRX); // communicate with pc (for debugging)
-RawSerial secondMbed(p13, p14); // potentially communicate with a second mbed for 2 player.
+//RawSerial secondMbed(p13, p14); // potentially communicate with a second mbed for 2 player.
 PwmOut red(p21); // added to dim and brighten red LED (in RGB LED) -- Brice
 PwmOut green(p22); // added to dim and brighten green LED (in RGB LED) -- Brice
 PwmOut blue(p23); // added to dim and brighten blue LED (in RGB LED) -- Brice
@@ -124,6 +124,7 @@ volatile int level = 1; // the level, number of lives/difficulty
 volatile bool game_menu = false; // boolean to determine if in the game_menu state
 volatile bool begin_game = false; // boolean to determine if the game has begun
 volatile bool gameover = false; // boolean to determine if the game was lost (game_over)
+volatile int storedScore = 0;
 //volatile int numPlayers = 1; // ONLY NEEDED FOR 2 PLAYER
 //volatile bool first_player_ready = false; // 2 Player: Keep track of each player being ready
 //volatile bool second_player_ready = false; // 2 Player: Keep track of each player being ready
@@ -461,6 +462,7 @@ void playstart(void const *args)//Th
             waver.play(wave_file);
             fclose(wave_file);
             SDLock.unlock();
+            Thread::wait(1000);
         }
         
         // Checks in game sound conditions
@@ -476,6 +478,7 @@ void playstart(void const *args)//Th
                 waver.play(wave_file);
                 fclose(wave_file);
                 SDLock.unlock();
+                Thread::wait(250);
             }
             
             // if player hit, play hit sound. Edited from https://freesound.org/people/tcpp/sounds/77339/ 
@@ -487,6 +490,7 @@ void playstart(void const *args)//Th
                 waver.play(wave_file);
                 fclose(wave_file);
                 SDLock.unlock();
+                Thread::wait(500);
             }
         }
         
@@ -498,6 +502,7 @@ void playstart(void const *args)//Th
             waver.play(wave_file);
             fclose(wave_file);
             SDLock.unlock();
+            Thread::wait(1000);
         }
             
         // gameover music: Edited from https://freesound.org/people/themusicalnomad/sounds/253886/ 
@@ -509,6 +514,7 @@ void playstart(void const *args)//Th
             waver.play(wave_file);
             fclose(wave_file);
             SDLock.unlock();
+            Thread::wait(1000);
         }
     }
 }
@@ -781,27 +787,27 @@ int main() {
     int temp = 0;
     int score = 0;
      
-     // variables and code used to read the best time from the SD card and store in storedTime for display on the LCD
-     // idea for best-time reading and updating: https://os.mbed.com/questions/75718/i-want-to-assign-int-value-saved-in-sd-t/
+     // variables and code used to read the score from the SD card and store in storedScore for display on the LCD
+     // idea for high score reading and updating: https://os.mbed.com/questions/75718/i-want-to-assign-int-value-saved-in-sd-t/
     char buffer[3] = {0};
     char c = {0};
     char *token;
     int i = 0;
-    int storedTime = 999;
+    //int storedScore = 0;
     SDLock.lock(); // mutex lock
-    FILE *sdtime;
-    sdtime=fopen("/sd/besttime.txt","r"); // open besttime.txt file
-    if(sdtime==NULL) pc.printf("file open error!\n\n\r"); // added this for open error check
-    // read the characters for the best time stored in besttime.txt from SD card and store in buffer
+    FILE *sdscore;
+    sdscore=fopen("/sd/highscore.txt","r"); // open highscore.txt file
+    if(sdscore==NULL) pc.printf("file open error!\n\n\r"); // added this for open error check
+    // read the characters for the high score stored in highscore.txt from SD card and store in buffer
     while ((c != '\n') && (i < 3)) {
-        c = fgetc(sdtime);
+        c = fgetc(sdscore);
         buffer[i] = c;
         i++;
     }
-    fclose(sdtime);
+    fclose(sdscore);
     SDLock.unlock();
     token = strtok(buffer, "\n");
-    storedTime = atoi(token); // convert string from file to integer. this is the stored best time.
+    storedScore = atoi(token); // convert string from file to integer. this is the stored high score.
     // Begin game loop
     while(1)
     {
@@ -871,7 +877,7 @@ int main() {
             //uLCD.printf("TWO-PLAYER");
             
             uLCD.locate(2,13);
-            uLCD.printf("Best time: %d s", storedTime); // print the stored best time at the bottom of the LCD.
+            uLCD.printf("High Score: %d", storedScore); // print the stored high score at the bottom of the LCD.
             // if pushbutton is pressed, game menu is exited and game begins
             if(!pb) 
             { 
@@ -945,20 +951,22 @@ int main() {
  
         // prints score (no competition possible since the score always ends as the same)
         uLCD.locate(9,0);
-        uLCD.printf("Score:%i", score);
+//        uLCD.filled_rectangle(
+        uLCD.printf("Score:%03d", score);
         
         // game play loop
         while(begin_game) 
         {
             // updates score
             temp = score;
-            score = (15-numOfEnemies)*15;
+            score = (15-numOfEnemies)*15*level - bestTimer.read(); // multiple the previous score calculation by the level and subtract the current time
+            if (score < 0) score = 0; // don't allow the score to go below 0.
             
             // prints score if score changes (score always ends at same number for win)
             if (score != temp)
             {
                 uLCD.locate(9,0);
-                uLCD.printf("Score:%i", score);
+                uLCD.printf("Score:%03i", score);
             }
             
             // move enemy
@@ -1106,40 +1114,42 @@ int main() {
             // checks if player destroyed all enemies (a win)
             if (numOfEnemies == 0)
             {
-                // idea for best-time reading and updating: https://os.mbed.com/questions/75718/i-want-to-assign-int-value-saved-in-sd-t/
+                // idea for high score reading and updating: https://os.mbed.com/questions/75718/i-want-to-assign-int-value-saved-in-sd-t/
                 // check the timer to see if there's a best time.
-                int time = bestTimer.read();
+                //int time = bestTimer.read();
                 bestTimer.stop();
                 bestTimer.reset();
+                //score = score - time;
                 uLCD.cls();
                 char buffer[3] = {0};
                 char c = {0};
                 char *token;
                 int i = 0;
-                int storedTime = 999;
+                //int storedScore = 0;
                 SDLock.lock(); // mutex lock SD
-                FILE *sdtime;
-                sdtime=fopen("/sd/besttime.txt","r");
-                if(sdtime==NULL) pc.printf("file open error!\n\n\r"); // added this for open error check
-                // read in characters from stored best time in SD and store in buffer
+                FILE *sdscore;
+                sdscore=fopen("/sd/highscore.txt","r"); // open highscore.txt
+                if(sdscore==NULL) pc.printf("file open error!\n\n\r"); // added this for open error check
+                // read in characters from stored high score in SD and store in buffer
                 while ((c != '\n') && (i < 3)) {
-                    c = fgetc(sdtime);
+                    c = fgetc(sdscore);
                     buffer[i] = c;
                     i++;
                 }
                 token = strtok(buffer, "\n");
-                storedTime = atoi(token); // convert string from file to integer
-                fclose(sdtime);
-                // if the new time is less than the stored time, print "NEW BEST TIME" on LCD and the number of seconds recorded by the timer.
-                if (time < storedTime) {
+                storedScore = atoi(token); // convert string from file to integer
+                fclose(sdscore);
+                // if the new score is greater than the stored score, print "NEW HIGH SCORE!" on LCD and the new high score
+                if (score > storedScore) {
+                    storedScore = score;
                     uLCD.locate(2,10);
-                    uLCD.printf("NEW BEST TIME!");
+                    uLCD.printf("NEW HIGH SCORE!");
                     uLCD.locate(2,11);
-                    uLCD.printf("%d seconds!", time);
-                    sdtime = fopen("/sd/besttime.txt", "w");
-                    if (sdtime != NULL) {
-                        fprintf(sdtime, "%d\r\n", time); // write the new best time to the SD card
-                        fclose(sdtime);
+                    uLCD.printf("%d", score);
+                    sdscore = fopen("/sd/highscore.txt", "w");
+                    if (sdscore != NULL) {
+                        fprintf(sdscore, "%d\r\n", score); // write the new high score to the SD card
+                        fclose(sdscore);
                     } else {
                         pc.printf("write: failed!\r\n");
                     }
