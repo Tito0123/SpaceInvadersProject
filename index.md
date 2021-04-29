@@ -6,7 +6,7 @@
     
 # Overview
 
-This project is a version of the space invaders created by Tomohiro Nishikado for Taito. Our version is an adaptation of Michael Son’s Mbed Space Invaders. Michael Son’s Space Invaders is the foundation upon which we built our game, and the features we implemented to make our game unique are listed below:
+This project is a version of the well-known retro arcade game, Space Invaders, that was developed by Tomohiro Nishikado for Taito in 1978. We thought that it would be interesting to produce this game with the ARM Mbed and the I/O hardware that is available in the ECE 4180 kits and in the ECE 4180 lab. We searched the Mbed wiki pages and found that Michael Son had already implemented a basic version of Mbed Space Invaders. Instead of simply building a new version of Space Invaders for the Mbed from scratch, we decided to adapt and improve upon Michel Son's Mbed Space Invaders. Michael Son's Mbed Space Invaders lacked the documentation necessary to reproduce the audio files that were initially required for his version of the game to run, and his version was somewhat buggy with frequent crashing and freezing. He neglected to use the "volatile" keyword that is used by the Mbed cloud compiler for mutual exclusion with global variables, and he often used the wait() function (that locks up the processor) when the Thread::wait() function (that allows other threads to run while one thread waits) should have been used. Michael Son's version also used basic squares (drawn with uLCD.filled_rectangle()) for the player and enemies instead of sprites, and his game menu had only one option (to start the game) and did not allow for cursor movement. The score in his version was calculated such that any winner of the game would have the same score; the score was based only on the number of enemies defeated. His game also lacked the barriers that the player could hide behind in the original game (until the player's or enemies' missiles destroyed them). The controls for Michel Son's version consisted of only a pushbutton and a somewhat uncomfortable 5-way tactile switch that allowed for only one speed of movement to the left or right. However, his game did offer a good foundation for the basic mechanics of the Space Invaders game. Michael Son’s Space Invaders is the foundation upon which we built our game, and the features we implemented to make our game unique are listed below:
 
 
 1. Joystick/IMU: Micheal Son's game uses a navigation switch to browse through the game menu and control the ship. Our version of the game uses both a joystick and an IMU for smoother movement and a more comfortable feel. Clicking the joystick also changes the color of the player. The link to the joystick can be found in the References/Citation Section.
@@ -47,8 +47,8 @@ Michael Son's Mbed Space Invaders inspired our version of the game. The link to 
 |p29         |        |                  |    Reset   |           |       |    |         |      |             |
 |p20         |        |                  |            | +         |       |    |         |      |             |       
 |p21         |        |                  |            |           |  Red  |    |         |      |             |
-|p22         |        |                  |            |           |  Blue |    |         |      |             |
-|p23         |        |                  |            |           | Green |    |         |      |             |
+|p22         |        |                  |            |           | Green |    |         |      |             |
+|p23         |        |                  |            |           | Blue  |    |         |      |             |
 |p9          |        |                  |            |           |       |SDA |         |      |             |
 |p10         |        |                  |            |           |       |SCL |         |      |             |
 |p15         |        |                  |            |           |       |    |VERT     |      |             |
@@ -97,7 +97,7 @@ Michael Son's Mbed Space Invaders inspired our version of the game. The link to 
 [SparkFun Analog Joystick](https://os.mbed.com/teams/a/code/SparkfunAnalogJoystick//file/2b40241a7675/SparkfunAnalogJoystick.cpp/) 
 
 [Space Invaders Soundtrack Website](https://www.classicgaming.cc/classics/space-invaders/sounds)  
-IT IS UNKNOWN THAT THESE ARE SAFE. SOME REDDITORS HAVE STATED THAT THIS SITE IS NOT LEGIT, BUT SOME SAY THEY HAVE USED IT WITHOUT CONSEQUENCES YET.  
+IT IS UNKNOWN IF THESE ARE SAFE. SOME REDDITORS HAVE STATED THAT THIS SITE IS NOT LEGIT, BUT SOME SAY THEY HAVE USED IT WITHOUT CONSEQUENCES YET.  
 
 [Barrier inspiration](https://os.mbed.com/users/DNoved1/notebook/space-invaders-clone/) 
 
