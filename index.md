@@ -6,6 +6,9 @@
     
 # Overview
 
+This project is a version of the space invaders created by Tomohiro Nishikado for Taito. Our version is an adaptation of Michael Son’s Mbed Space Invaders. Michael Son’s Space Invaders is the foundation upon which we built our game, and the features we implemented to make our game unique are listed below:
+
+
 1. Joystick/IMU: Micheal Son's game uses a navigation switch to browse through the game menu and control the ship. Our version of the game uses both a joystick and an IMU for smoother movement and a more comfortable feel. Clicking the joystick also changes the color of the player. The link to the joystick can be found in the References/Citation Section.
 2. Pushbutton: Both versions of the game use a pushbutton to select an option on the menu screen and shoot missiles at the rows of enemies.
 3. Speakers: Our version of the game utilizes a speaker and a class D amplifier to play sounds that are in sync with the game (e.g., victory/losing sound, game menu sound, missile fired sound, e.t.c). This feature is not present in Micheal Son's game. The links to the sounds we used are in the References/Citation section. Finally, It is also important to note that while recreating our version, the sound files (.wave files) need to be saved in a folder called "wavfiles," which should be stored on the SD card.
