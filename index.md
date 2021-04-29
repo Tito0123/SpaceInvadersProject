@@ -74,22 +74,22 @@ Michael Son's Mbed Space Invaders inspired our version of the game. The link to 
 3. We can further improve the animations of the game and the sound quality.
 
 # References/Citation
-comicalgameoverEdit (gameover): https://freesound.org/people/themusicalnomad/sounds/253886/ 
-bigExplosionEdit2 (death): https://freesound.org/people/tcpp/sounds/77339/ 
-futureEdit2 (intro): https://freesound.org/people/VABsounds/sounds/443865/ 
-laserEdit (missile): https://freesound.org/people/nsstudios/sounds/321102/ 
-victoryEdit2 (win): https://freesound.org/people/honeybone82/sounds/513253/ 
+[comicalgameoverEdit (gameover)](https://freesound.org/people/themusicalnomad/sounds/253886/)  
+[bigExplosionEdit2 (death)](https://freesound.org/people/tcpp/sounds/77339/)  
+[futureEdit2 (intro)](https://freesound.org/people/VABsounds/sounds/443865/)  
+[laserEdit (missile)](https://freesound.org/people/nsstudios/sounds/321102/)  
+[victoryEdit2 (win)](https://freesound.org/people/honeybone82/sounds/513253/)  
 
-Starter Code: Michael Son’s Mbed Space Invaders: https://os.mbed.com/users/michaeljson/notebook/mbed-space-invaders/ 
+[Starter Code: Michael Son’s Mbed Space Invaders](https://os.mbed.com/users/michaeljson/notebook/mbed-space-invaders/) 
 
-SparkFun Analog Joystick: https://os.mbed.com/teams/a/code/SparkfunAnalogJoystick//file/2b40241a7675/SparkfunAnalogJoystick.cpp/ 
+[SparkFun Analog Joystick](https://os.mbed.com/teams/a/code/SparkfunAnalogJoystick//file/2b40241a7675/SparkfunAnalogJoystick.cpp/) 
 
-Space Invaders Soundtrack Website: https://www.classicgaming.cc/classics/space-invaders/sounds 
-IT IS UNKNOWN THAT THESE ARE SAFE. SOME REDDITORS HAVE STATED THAT THIS SITE IS NOT LEGIT, BUT SOME SAY THEY HAVE USED IT WITHOUT CONSEQUENCES YET. 
+[Space Invaders Soundtrack Website](https://www.classicgaming.cc/classics/space-invaders/sounds)  
+IT IS UNKNOWN THAT THESE ARE SAFE. SOME REDDITORS HAVE STATED THAT THIS SITE IS NOT LEGIT, BUT SOME SAY THEY HAVE USED IT WITHOUT CONSEQUENCES YET.  
 
-Used for barrier inspiration: https://os.mbed.com/users/DNoved1/notebook/space-invaders-clone/ 
+[Used for barrier inspiration](https://os.mbed.com/users/DNoved1/notebook/space-invaders-clone/) 
 
-Speaker Sound Control: https://os.mbed.com/users/4180_1/notebook/tpa2005d1-class-d-audio-amp/ 
+[Speaker Sound Control](https://os.mbed.com/users/4180_1/notebook/tpa2005d1-class-d-audio-amp/) 
 
  
 
