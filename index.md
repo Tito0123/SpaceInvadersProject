@@ -64,7 +64,7 @@ Michael Son's Mbed Space Invaders inspired our version of the game. The link to 
 |            |        |  Volume (Bottom) |            |           |       |    |         |      | Bottom      |
 
 # Schematic
-![image Schematic](https://github.com/Tito0123/SpaceInvadersProject/blob/master/schematic.png?raw=true)
+![image Schematic](https://github.com/Tito0123/SpaceInvadersProject/blob/master/schematics.png?raw=true)
 # Setup
 ![image of space invaders setup](https://github.com/Tito0123/Space_invadersbyTitoandBrice/blob/master/IMG_5252.jpg?raw=true "setup")
 
