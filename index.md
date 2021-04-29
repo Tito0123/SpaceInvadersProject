@@ -34,37 +34,38 @@ Michael Son's Mbed Space Invaders inspired our version of the game. The link to 
 8.  Speaker
 9.  Class D Audio Amplifier (from Sparkfun)
 10. Potentiometer
+11. 5V 2A AC Adapter Barrel Plug with Breadboard Barrel Jack Adapter
 
 # Wiring
 
-|mbed        |Speaker |Class D audio amp |uLCD header |Pushbutton |RGBLED |IMU |Joystick |SDCard|Potentiometer|
-|------------|--------|------------------|------------|-----------|-------|----|---------|------|-------------|
-|GND         |        | pwr -            |     GND    |  -        |GND    |GND |GND      |GND   |             |       
-|Vout(3.3V)  |        | pwr +            |            |           |       |VDD |  VCC    |VCC   |             |
-|p18         |        | in +             |            |           |       |    |         |      |             |
-|            | +      | out +            |            |           |       |    |         |      |             |      
-|            | -      | out -            |            |           |       |    |         |      |             |                                                         
-|VU = 5V     |        |                  |5V(External)|           |       |    |         |      |             |
-|TX = p28    |        |                  |    RX      |           |       |    |         |      |             |                       
-|RX = p27    |        |                  |    TX      |           |       |    |         |      |             |
-|p29         |        |                  |    Reset   |           |       |    |         |      |             |
-|p20         |        |                  |            | +         |       |    |         |      |             |       
-|p21         |        |                  |            |           |  Red  |    |         |      |             |
-|p22         |        |                  |            |           | Green |    |         |      |             |
-|p23         |        |                  |            |           | Blue  |    |         |      |             |
-|p9          |        |                  |            |           |       |SDA |         |      |             |
-|p10         |        |                  |            |           |       |SCL |         |      |             |
-|p15         |        |                  |            |           |       |    |VERT     |      |             |
-|p16         |        |                  |            |           |       |    |HORZ     |      |             |
-|p17         |        |                  |            |           |       |    | SEL     |      |             |
-|p8          |        |                  |            |           |       |    |         | CS   |             |
-|p5          |        |                  |            |           |       |    |         | DI   |             |
-|p7          |        |                  |            |           |       |    |         |SCK   |             |
-|p6          |        |                  |            |           |       |    |         | DO   |             |
-|            |        |                  |            |           |       |    |         | CD   |             |
-|            |        |  Volume (Top)    |            |           |       |    |         |      | Top         |
-|            |        |  Volume (Middle) |            |           |       |    |         |      | Middle      |
-|            |        |  Volume (Bottom) |            |           |       |    |         |      | Bottom      |
+|mbed        |Speaker |Class D audio amp |uLCD header |Pushbutton |RGBLED |IMU |Joystick |SDCard|Potentiometer|5V 2A AC Adapter|
+|------------|--------|------------------|------------|-----------|-------|----|---------|------|-------------|----------------|
+|GND         |        | pwr -            |     GND    |  -        |GND    |GND |GND      |GND   |             |      GND       |
+|Vout(3.3V)  |        | pwr +            |            |           |       |VDD |  VCC    |VCC   |             |                |
+|p18         |        | in +             |            |           |       |    |         |      |             |                |
+|            | +      | out +            |            |           |       |    |         |      |             |                |
+|            | -      | out -            |            |           |       |    |         |      |             |                |                                         
+|            |        |                  |    5V      |           |       |    |         |      |             |      5VDC      |
+|TX = p28    |        |                  |    RX      |           |       |    |         |      |             |                |      
+|RX = p27    |        |                  |    TX      |           |       |    |         |      |             |                |
+|p29         |        |                  |    Reset   |           |       |    |         |      |             |                |
+|p20         |        |                  |            | +         |       |    |         |      |             |                |
+|p21         |        |                  |            |           |  Red  |    |         |      |             |                |
+|p22         |        |                  |            |           | Green |    |         |      |             |                |
+|p23         |        |                  |            |           | Blue  |    |         |      |             |                |
+|p9          |        |                  |            |           |       |SDA |         |      |             |                |
+|p10         |        |                  |            |           |       |SCL |         |      |             |                |
+|p15         |        |                  |            |           |       |    |VERT     |      |             |                |
+|p16         |        |                  |            |           |       |    |HORZ     |      |             |                |
+|p17         |        |                  |            |           |       |    | SEL     |      |             |                |
+|p8          |        |                  |            |           |       |    |         | CS   |             |                |
+|p5          |        |                  |            |           |       |    |         | DI   |             |                |
+|p7          |        |                  |            |           |       |    |         |SCK   |             |                |
+|p6          |        |                  |            |           |       |    |         | DO   |             |                |
+|            |        |                  |            |           |       |    |         | CD   |             |                |
+|            |        |  Volume (Top)    |            |           |       |    |         |      | Top         |                |
+|            |        |  Volume (Middle) |            |           |       |    |         |      | Middle      |                |
+|            |        |  Volume (Bottom) |            |           |       |    |         |      | Bottom      |                |
 
 # Schematic
 ![image Schematic](https://github.com/Tito0123/SpaceInvadersProject/blob/master/schematics.png?raw=true)
