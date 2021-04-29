@@ -91,7 +91,7 @@ Michael Son's Mbed Space Invaders inspired our version of the game. The link to 
 [Space Invaders Soundtrack Website](https://www.classicgaming.cc/classics/space-invaders/sounds)  
 IT IS UNKNOWN THAT THESE ARE SAFE. SOME REDDITORS HAVE STATED THAT THIS SITE IS NOT LEGIT, BUT SOME SAY THEY HAVE USED IT WITHOUT CONSEQUENCES YET.  
 
-[Used for barrier inspiration](https://os.mbed.com/users/DNoved1/notebook/space-invaders-clone/) 
+[Barrier inspiration](https://os.mbed.com/users/DNoved1/notebook/space-invaders-clone/) 
 
 [Speaker Sound Control](https://os.mbed.com/users/4180_1/notebook/tpa2005d1-class-d-audio-amp/) 
 
