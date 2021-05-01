@@ -2,17 +2,17 @@
 
 ### Welcome to the SpaceInvaders wiki!
 
-    Team Members: Brice Minix; Tito Oyewole
+    Team Members: William Brice Minix; Tito Oyewole
     
 # Overview
 
-This project is a version of the well-known retro arcade game, Space Invaders, that was developed by Tomohiro Nishikado for Taito in 1978. We thought that it would be interesting to produce this game with the ARM Mbed and the I/O hardware that is available in the ECE 4180 kits and in the ECE 4180 lab. We searched the Mbed wiki pages and found that Michael Son had already implemented a basic version of Mbed Space Invaders. Instead of simply building a new version of Space Invaders for the Mbed from scratch, we decided to adapt and improve upon Michel Son's Mbed Space Invaders.
+This project is an mbed-based implementation of the well-known retro arcade game, Space Invaders, that was developed by Tomohiro Nishikado for Taito in 1978. The player's goal in this game is to avoid enemy missiles and defeat all enemies with missiles before they can reach the player. We thought that it would be interesting to produce this game with the ARM Mbed and the I/O hardware that is available in the ECE 4180 kits and in the ECE 4180 lab. We searched the Mbed wiki pages and found that Michael Son had already implemented a basic version of Mbed Space Invaders. Instead of simply building a new version of Space Invaders for the Mbed from scratch, we decided to adapt and improve upon Michael Son's Mbed Space Invaders.
 
 Michael Son's Mbed Space Invaders lacks the documentation necessary to reproduce the audio files that were initially required for his version of the game to run, and his version is somewhat buggy with frequent crashing and freezing. He neglected to use the "volatile" keyword that is used by the Mbed cloud compiler for mutual exclusion with global variables, and he often uses the wait() function (that locks up the processor) when the Thread::wait() function (that allows other threads to run while one thread waits) should have been used. 
 
-Michael Son's version also uses basic squares (drawn with uLCD.filled_rectangle()) for the player and enemies instead of sprites, and his game menu has only one option (to start the game) and does not allow for cursor movement. The score in his version is calculated such that any winner of the game would have the same score; the score is based only on the number of enemies defeated. His game also lacks the barriers that the player could hide behind in the original game (until the player's or enemies' missiles destroyed them). 
+Michael Son's version also uses basic squares (drawn with uLCD.filled_rectangle()) for the player and enemies instead of sprites, and his game menu has only one option (to start the game) and does not allow for cursor movement. The score in his version is calculated such that any winner of the game would have the same score since the score is based only on the number of enemies defeated. His game also lacks the barriers of the original game that the player could hide behind (until the player's or enemies' missiles destroyed them). 
 
-The controls for Michel Son's version consist of only a pushbutton and a somewhat uncomfortable 5-way tactile switch (navigation switch) that allowed for only one speed of movement to the left or right. However, his game does offer a good foundation for the basic mechanics of the Space Invaders game. Michael Son’s Space Invaders is the foundation upon which we built our game, and the features/changes we implemented to make our game unique are listed below along with some important explanations and instructions:
+The controls for Michael Son's version consist of only a pushbutton and a somewhat uncomfortable 5-way tactile switch (navigation switch) that allows for only one speed of movement to the left or right. However, his game does offer a good foundation for the basic mechanics of the Space Invaders game, and we built our game upon this foundation. The features/changes we implemented to make our game unique are listed below along with some important explanations and instructions:
 
 
 1. Joystick/IMU Controls: Micheal Son's game uses a somewhat uncomfortable navigation switch (5-way tactile switch) to browse through the game menu and move the ship (the player) to the left and right. This navigation switch allows for only one speed of movement to the left and right (less fluid control). Our version of the game uses both a SparkFun thumb joystick and a SparkFun 9 Degrees of Freedom IMU (LSM9DS1) (uses the accelerometer via tilting) for smoother movement and a more comfortable feel. The speed of movement depends on how much the joystick is pushed and/or how much the board is tilted. Clicking the joystick also changes the color of the player (the ship); this essentially adds a basic "skin" feature. The player can choose to be green, blue, pink, purple, or yellow by repeatedly clicking the joystick. To more easily allow the player to choose their color, we require that the joystick's button be released and pushed again for each change in color. The link to the joystick library used can be found in the References/Citation Section; this library offers useful functions that can be used to offer a lot of flexibility with using the joystick.
@@ -39,7 +39,7 @@ The controls for Michel Son's version consist of only a pushbutton and a somewha
 
 Michael Son's Mbed Space Invaders inspired our version of the game. The link to his wiki page can be found in the References/Citation section.
 
-# Components Used
+# Parts List
 1.  ARM Mbed (LPC1768)
 2.  uLCD-144-G2 128 by 128 Smart Color LCD
 3.  Pushbutton
