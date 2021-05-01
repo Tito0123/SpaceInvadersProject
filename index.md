@@ -97,7 +97,6 @@ Michael Son's Mbed Space Invaders inspired our version of the game. The link to 
 ![image of space invaders Game Screen](https://github.com/Tito0123/SpaceInvadersProject/blob/master/IMG_5268.jpg?raw=true,"Game Screen")
 | :--: |
 | *Our Game Screen* |
-
 # Demo Video 
 [![Video Demo](https://github.com/Tito0123/SpaceInvadersProject/blob/master/Screen%20Shot%202021-04-29%20at%204.52.45%20PM.png?raw=true)](https://www.youtube.com/watch?v=yYQUnkd2oaI "Project Demo")
 
