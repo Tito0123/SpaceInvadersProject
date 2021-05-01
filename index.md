@@ -90,6 +90,8 @@ Michael Son's Mbed Space Invaders inspired our version of the game. The link to 
 # Setup
 
 ![image of space invaders Game Menu](https://github.com/Tito0123/SpaceInvadersProject/blob/master/IMG_5261.jpg?raw=true, "Game Menu")
+*                                                      Menu of our Game                                                             *
+
 
 ![image of space invaders Game Screen](https://github.com/Tito0123/SpaceInvadersProject/blob/master/IMG_5268.jpg?raw=true,"Game Screen")
 
@@ -98,8 +100,11 @@ Michael Son's Mbed Space Invaders inspired our version of the game. The link to 
 
 # Future Improvements
 1. When we set out to recreate this game, we wanted to implement a two-player Space Invaders game using two mbeds, two screens, e.t.c. However, we quickly ran into some technical difficulties while attempting to form a means of communication between the two mbeds. We eventually figured it out, but time would not allow us to proceed on this path. Currently, the two mbeds can communicate with each other, and we have the primitives for this setup commented out in our code. In the future, we will move forward with our idea of two players competing to get the highest scores.
+
 2. More work needs to be done to make both versions of the game less buggy.
+
 3. We can further improve the animations of the game and the sound quality.
+
 4. We can make more involved skins instead of simply changing the color of the player.
 
 # References/Citation
