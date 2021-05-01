@@ -89,7 +89,7 @@ NOTICE: Our code includes comments to help explain its functionality. Our code c
 ![image Schematic](https://github.com/Tito0123/SpaceInvadersProject/blob/master/schematics.png?raw=true)
 
 
-# Setup
+# Setup/Improvements
 
 | ![image of space invaders Game Menu](https://github.com/Tito0123/SpaceInvadersProject/blob/master/msGameMenu.jpeg?raw=true, "Michael Son's Game Menu") |
 | :--: |
