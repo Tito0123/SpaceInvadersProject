@@ -89,22 +89,22 @@ Michael Son's Mbed Space Invaders inspired our version of the game. The link to 
 
 # Setup
 
-| ![image of space invaders Game Menu](https://github.com/Tito0123/SpaceInvadersProject/blob/master/msGameMenu.jpeg?raw=true, "Game Menu") |
+| ![image of space invaders Game Menu](https://github.com/Tito0123/SpaceInvadersProject/blob/master/msGameMenu.jpeg?raw=true, "Michael Son's Game Menu") |
 | :--: |
 | *Michael Son's Game Menu* |  
 
 
-| ![image of space invaders Game Menu](https://github.com/Tito0123/SpaceInvadersProject/blob/master/gameMenuScreen.jpg?raw=true, "Game Menu") |
+| ![image of space invaders Game Menu](https://github.com/Tito0123/SpaceInvadersProject/blob/master/gameMenuScreen.jpg?raw=true, "Our Game Menu") |
 | :--: |
 | *Our Game Menu* |  
 
 
-| ![image of space invaders Game Screen](https://github.com/Tito0123/SpaceInvadersProject/blob/master/msGameScreen.jpeg?raw=true,"Game Screen") |
+| ![image of space invaders Game Screen](https://github.com/Tito0123/SpaceInvadersProject/blob/master/msGameScreen.jpeg?raw=true,"Michael Son's Game Screen") |
 | :--: |
 | *Michael Son's Game Screen* |  
 
 
-| ![image of space invaders Game Screen](https://github.com/Tito0123/SpaceInvadersProject/blob/master/congratsScreen.jpg?raw=true,"Game Screen") |
+| ![image of space invaders Game Screen](https://github.com/Tito0123/SpaceInvadersProject/blob/master/congratsScreen.jpg?raw=true,"Our Game Screen") |
 | :--: |
 | *Our Game Screen* |  
 
@@ -113,7 +113,7 @@ Michael Son's Mbed Space Invaders inspired our version of the game. The link to 
  [![Video Demo](https://github.com/Tito0123/SpaceInvadersProject/blob/master/Screen%20Shot%202021-04-29%20at%204.52.45%20PM.png?raw=true)](https://www.youtube.com/watch?v=yYQUnkd2oaI "Project Demo") 
  
 # Presentation 
- [![Video Demo](https://github.com/Tito0123/SpaceInvadersProject/blob/master/Untitled%203.jpg?raw=true)](https://www.youtube.com/watch?v=pHEw14TYPIc "Project Demo") 
+ [![Video Demo](https://github.com/Tito0123/SpaceInvadersProject/blob/master/Untitled%203.jpg?raw=true)](https://www.youtube.com/watch?v=pHEw14TYPIc "Final Presentation") 
 
 # Future Improvements
 1. When we set out to recreate this game, we wanted to implement a two-player Space Invaders game using two mbeds, two screens, e.t.c. However, we quickly ran into some technical difficulties while attempting to form a means of communication between the two mbeds. We eventually figured it out, but time would not allow us to proceed on this path. Currently, the two mbeds can communicate with each other, and we have the primitives for this setup commented out in our code. In the future, we will move forward with our idea of two players competing to get the highest scores.
